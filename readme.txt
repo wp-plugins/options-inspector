@@ -33,6 +33,10 @@ Features:
 
 If you have one, please send me a email.
 
+== Other Notes ==
+
+None.
+
 == Screenshots ==
 
 1. This screenshot is the the admin view of the plugin.
