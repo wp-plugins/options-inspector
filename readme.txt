@@ -1,42 +1,74 @@
 === Options Inspector ===
-Contributors: Charles
+Contributors: Charles, szepe.viktor
 Donate link: http://sexywp.com/plugin-options-inspector.htm
-Tags: options, management, admin, developer, tools
-Requires at least: 2.7
-Tested up to: 2.5.1
-Stable tag: 1.0.2
+Tags: options, management, admin, developer, tools, administration
+Requires at least: 4.0
+Tested up to: 4.1.1
+Stable tag: 2.0.0
 
-Options Inspector is a tool with which you can easily view all the options in your database, even its data is serialized, and alter exactly a certain part of option value.
+Inspect and edit options, even serialized ones.
 
 == Description ==
 
-Options Inspector is a tool with which you can list all the options in your database, view a certain one in detail, even its data is serialized, and alter exactly a certain part of option value. It is mainly designed for plugin developers and theme designers.
-
-When I am debugging a plugin, I always want to konw, whether the options in this plugin are saved exactly or not. Usually, I add var_dump statement in my source code to print the options out. Everything looks good, but when I finished my job, it bothered me a lot to remove this debug statements. What annoyed me even more is that when I change my mind and changed the structure of the option, I must use additional statement to alter the option or directly use SQL in phpMyAdmin. Finally, I created this tool to assist the plugin development.
+= Only for development! =
 
 Features:
 
-    * List all options order by option_id.
-    * Search option through keyword.
-    * View unsierialized value of options.
-    * Modify option use PHP code.
+* Inspect options with the colorful [dBug](http://kolanich.github.io/dBug/)
+* Edit serialized options
+* List all options in the wp_options table on one page
+* Search: Filter options in real time
+* Delete options
+* Show autoload status (yes or no)
+* Popular plugin's options are marked with the author's website favicon
+* Transients are marked with a clock icon
+* Transient timeouts are marked with a red clock icon
+
+You'll find Option Inspector under Tools / Options.
+
+Notice: This plugin uses `eval()` to update serialized options.
+Please **DO NOT** use it in production.
+
+This plugin is as WordPress comform as it can be.
+
+[GitHub repo](https://github.com/szepeviktor/option-inspector)
+
+TODO: toggle autoload, i18n, don't use options.php, update option list on delete, http://flatuicolors.com/
 
 == Installation ==
 
-1. Upload `options-inspector` directory to the `/wp-content/plugins/` directory
-
-2. Activate the plugin through the 'Plugins' menu in WordPress
+1. Upload `options-inspector` directory to the `wp-content/plugins/` directory.
+1. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Frequently Asked Questions ==
 
-= Do you have any question? =
+= What privilege do I need to access Option Inspector? =
 
-If you have one, please send me a email.
+You need to have the `manage_options` privilege.
 
-== Other Notes ==
+= How does it work? =
 
-None.
+This plugin is a Javascript application built on the WordPress `options.php`.
+It works by addig control icons and opening a lightbox on `options.php`.
+Additional data are read and written by AJAX requests.
 
 == Screenshots ==
 
-1. This screenshot is the the admin view of the plugin.
+1. dBug in an open lightbox.
+1. `options.php`.
+1. Edit a serialized option.
+
+== Changelog ==
+
+= 2.0.0 =
+* This is another plugin, [the old one is available here](http://plugins.svn.wordpress.org/options-inspector/tags/1.0.2/).
+* New features.
+
+= 1.0.2 =
+* Options Inspector is a tool with which you can easily view all the options in your database,
+even its data is serialized, and alter exactly a certain part of option value.
+
+== Upgrade Notice ==
+
+= 2.0.0 =
+This is completly different plugin than 1.0.2. Charles gave me permission.
