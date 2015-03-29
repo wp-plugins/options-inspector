@@ -20,6 +20,7 @@ Features:
 * Search: Filter options in real time
 * Delete options
 * Show autoload status (yes or no)
+* Display value size in SQL bytes
 * Popular plugin's options are marked with the author's website favicon
 * Transients are marked with a clock icon
 * Transient timeouts are marked with a red clock icon
